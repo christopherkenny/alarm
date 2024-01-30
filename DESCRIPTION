@@ -1,0 +1,18 @@
+Package: alarm
+Title: ALARM Project Tools
+Version: 0.0.0.9000
+Authors@R: 
+    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Internal theming tools for the ALARM Project, including slide 
+    templates and color palettes. Provides consistent plot extensions for working 
+    with 'ggplot2'.
+License: file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    ggplot2,
+    officer
+Suggests: 
+    fs
