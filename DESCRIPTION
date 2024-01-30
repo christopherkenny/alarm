@@ -16,3 +16,5 @@ Imports:
     officer
 Suggests: 
     fs
+URL: https://github.com/christopherkenny/alarm
+BugReports: https://github.com/christopherkenny/alarm/issues
