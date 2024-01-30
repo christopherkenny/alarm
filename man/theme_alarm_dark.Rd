@@ -20,5 +20,13 @@ ggplot2::mpg |>
   ggplot2::ggplot() +
    ggplot2::geom_point(ggplot2::aes(displ, hwy, color = class)) +
    scale_color_alarm() +
-   theme_alarm_dark()
+   theme_alarm_dark
+
+ggplot2::mpg |>
+  ggplot2::ggplot() +
+   ggplot2::geom_point(ggplot2::aes(displ, hwy, color = class)) +
+   ggplot2::facet_wrap(~manufacturer) +
+   scale_color_alarm() +
+   theme_alarm_dark
+
 }
