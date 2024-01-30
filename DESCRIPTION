@@ -15,6 +15,8 @@ Imports:
     ggplot2,
     officer
 Suggests: 
-    fs
+    fs,
+    magick,
+    patchwork
 URL: https://github.com/christopherkenny/alarm
 BugReports: https://github.com/christopherkenny/alarm/issues

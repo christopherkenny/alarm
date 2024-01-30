@@ -10,6 +10,7 @@
 #' alarm_ppt_create() |>
 #'   print(target = file_ppt)
 alarm_ppt_create <- function(template = 'light') {
+  match.arg(template, c('light', 'dark'))
   alarm_ppt_template(template) |>
     officer::read_pptx()
 }

@@ -3,6 +3,7 @@
 export(alarm)
 export(alarm_ppt_create)
 export(alarm_ppt_template)
+export(gg_annotate_alarm)
 export(scale_color_alarm)
 export(scale_colour_alarm)
 export(scale_fill_alarm)
