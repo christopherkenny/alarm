@@ -9,7 +9,8 @@ gg_annotate_alarm(
   logo_left = 0.9,
   logo_bottom = 0.01,
   logo_right = 0.99,
-  logo_top = 0.1
+  logo_top = 0.1,
+  band = TRUE
 )
 }
 \arguments{
@@ -22,6 +23,8 @@ gg_annotate_alarm(
 \item{logo_right}{relative position for logo from the right}
 
 \item{logo_top}{relative position for logo from the top}
+
+\item{band}{logical, default \code{TRUE}. Should the logo be placed on a blue band?}
 }
 \value{
 a ggplot2 object
