@@ -4,10 +4,24 @@
 \alias{gg_annotate_alarm}
 \title{Add ALARM Project logo to a ggplot2 object}
 \usage{
-gg_annotate_alarm(gg)
+gg_annotate_alarm(
+  gg,
+  logo_left = 0.9,
+  logo_bottom = 0.01,
+  logo_right = 0.99,
+  logo_top = 0.1
+)
 }
 \arguments{
 \item{gg}{a ggplot2 object}
+
+\item{logo_left}{relative position for logo from the left}
+
+\item{logo_bottom}{relative position for logo from the bottom}
+
+\item{logo_right}{relative position for logo from the right}
+
+\item{logo_top}{relative position for logo from the top}
 }
 \value{
 a ggplot2 object

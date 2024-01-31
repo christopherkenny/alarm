@@ -1,6 +1,10 @@
 #' Add ALARM Project logo to a ggplot2 object
 #'
 #' @param gg a ggplot2 object
+#' @param logo_left relative position for logo from the left
+#' @param logo_bottom relative position for logo from the bottom
+#' @param logo_right relative position for logo from the right
+#' @param logo_top relative position for logo from the top
 #'
 #' @return a ggplot2 object
 #' @export
@@ -13,7 +17,8 @@
 #'   theme_alarm_dark()
 #'
 #' p |> gg_annotate_alarm()
-gg_annotate_alarm <- function(gg) {
+gg_annotate_alarm <- function(gg, logo_left = .9, logo_bottom = 0.01,
+                              logo_right = .99, logo_top = 0.1) {
   if (!requireNamespace('magick', quietly = TRUE)) {
     stop('Please install the magick package to use this function')
   }
@@ -26,8 +31,8 @@ gg_annotate_alarm <- function(gg) {
   gg +
     patchwork::inset_element(
       p = magick::image_ggplot(logo),
-      left = .9, bottom = 0.01,
-      right = .99, top = 0.1,
+      left = logo_left, bottom = logo_bottom,
+      right = logo_right, top = logo_top,
       align_to = 'full'
     )
 }
