@@ -1,0 +1,73 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# alarm
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+`alarm` is an internal ALARM Project package designed to organize and
+standardize plots and slides for weekly meetings. It is not intended for
+public use. For packages intended for public use, please see the [ALARM
+Project webiste](https://alarm-redist.org/about.html). For our mapping
+functions, see [ggredist](https://alarm-redist.org/ggredist/).
+
+## Installation
+
+You can install the development version of alarm from
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("christopherkenny/alarm")
+```
+
+## Creating slides
+
+We have two slide templates, light and dark. To create a new PowerPoint
+from the templates, use the following.
+
+``` r
+out_file <- tempfile(fileext = '.pptx')
+library(alarm)
+
+alarm_ppt_create(template = 'light') |> 
+  print(target = out_file)
+```
+
+`alarm_ppt_create()` returns an `officer` object which can be edited
+using [regular officer
+functions](https://davidgohel.github.io/officer/reference/index.html#reading-writing-powerpoint-documents).
+
+## Standardize images
+
+We have a theme, color scales, and other related image functions. An
+example with the dark theme looks like:
+
+``` r
+ggplot2::mpg |>
+  ggplot2::ggplot() +
+  ggplot2::geom_point(ggplot2::aes(displ, hwy, color = class)) +
+  scale_color_alarm() +
+  theme_alarm_dark()
+```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+
+With the light theme, it looks like:
+
+``` r
+ggplot2::mpg |>
+  ggplot2::ggplot() +
+  ggplot2::geom_point(ggplot2::aes(displ, hwy, color = class)) +
+  scale_color_alarm() +
+  theme_alarm_light()
+```
+
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+
+Note: these are used for internal presentations to make the plots match
+with our slides. For colorblind, publication-ready colors, the ALARM
+Project primarily uses Cory McCartan’s
+[wacolors](https://github.com/CoryMcCartan/wacolors) package or our
+[ggredist](https://alarm-redist.org/ggredist/) package.
